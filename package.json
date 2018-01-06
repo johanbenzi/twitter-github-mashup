@@ -17,7 +17,18 @@
   },
   "homepage": "https://github.com/johanbenzi/twitter-github-mashup#readme",
   "dependencies": {
+    "chalk": "^2.3.0",
+    "clear": "0.0.1",
+    "clui": "^0.3.6",
     "express": "^4.16.2",
-    "gulp": "^3.9.1"
+    "figlet": "^1.2.0",
+    "github": "^13.0.1",
+    "gulp-nodemon": "^2.2.1",
+    "inquirer": "^4.0.2",
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
+    "preferences": "^1.0.2",
+    "simple-git": "^1.85.0",
+    "touch": "^3.1.0"
   }
 }
