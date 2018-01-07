@@ -33,6 +33,7 @@ var getTweets = (project, projectCount, chalk, status) => {
         for (var index in res.statuses) {
 
             console.log(" ", (parseInt(index) + 1), chalk.blue(res.statuses[index].text), chalk.dim(" - "), chalk.yellow.italic(res.statuses[index].user.name));
+            //moment function for formating created time 
             console.log(" Tweeted at: ", chalk.gray(moment(res.statuses[index].created_at, "ddd MMM DD HH:mm:ss SSSSS YYYY").utc().format("MM-DD-YYYY hh:mm")));
         }
         /**
