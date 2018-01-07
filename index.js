@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express');
 var chalk = require('chalk');
 var clear = require('clear');

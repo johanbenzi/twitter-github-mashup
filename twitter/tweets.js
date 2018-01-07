@@ -1,17 +1,21 @@
-var keys = require('./keys');
 var Twitter = require('twitter');
 var moment = require('moment');
 var lastPrintedCount = 0;
 var getTweets = (project, projectCount, chalk, status) => {
-    
+
     var client = new Twitter({
-        consumer_key: keys.twitterKeys.consumer_key,
-        consumer_secret: keys.twitterKeys.consumer_secret,
-        access_token_key: keys.twitterKeys.access_token_key,
-        access_token_secret: keys.twitterKeys.access_token_secret
+        consumer_key: process.env.consumer_key,
+        consumer_secret: process.env.consumer_secret,
+        access_token_key: process.env.access_token_key,
+        access_token_secret: process.env.access_token_secret
     });
+    console.log(process.env.consumer_key);
     client.get('search/tweets', {q: project.name, count: 10}, (err, res) => {
         
+        if(err) {
+            console.log(err);
+            return;
+        }
         status.stop();
         console.log("\n Repo no: ", ++lastPrintedCount, " Name: ", chalk.green.bold(project.name) + "    Author: " + chalk.green.italic(project.owner.login));
         console.log("\n Description: ", chalk.cyan(project.description || ""));
